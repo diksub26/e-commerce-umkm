@@ -1,4 +1,3 @@
-import moment from 'moment';
 window._ = require('lodash');
 
 /**
@@ -12,9 +11,15 @@ try {
     window.$ = window.jQuery = require('jquery');
     
     require('bootstrap');
+
+    // Load Plugin
     require('jquery.nicescroll');
-    require('./scripts')
-    require('./stisla')
+    require('jquery-validation');
+    require('moment');
+
+    // stisla js
+    require('./scripts');
+    require('./stisla');
 } catch (e) {}
 
 /**
