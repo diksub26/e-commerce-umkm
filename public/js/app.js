@@ -81560,12 +81560,18 @@ try {
   window.Popper = __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js")["default"];
   window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
-  __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js"); // Load Plugin
+  __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js"); // Basic Plugin
 
 
   __webpack_require__(/*! jquery.nicescroll */ "./node_modules/jquery.nicescroll/jquery.nicescroll.js");
 
-  __webpack_require__(/*! jquery-validation */ "./node_modules/jquery-validation/dist/jquery.validate.js");
+  __webpack_require__(/*! jquery-validation */ "./node_modules/jquery-validation/dist/jquery.validate.js"); // stisla js
+
+
+  __webpack_require__(/*! ./vendor/stisla/stisla */ "./resources/js/vendor/stisla/stisla.js");
+
+  __webpack_require__(/*! ./vendor/stisla/scripts */ "./resources/js/vendor/stisla/scripts.js"); // Plugin
+
 
   __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
@@ -81573,12 +81579,7 @@ try {
 
   __webpack_require__(/*! datatables.net-buttons-bs4 */ "./node_modules/datatables.net-buttons-bs4/js/buttons.bootstrap4.js");
 
-  __webpack_require__(/*! ./vendor/datatables/buttons.server-side */ "./resources/js/vendor/datatables/buttons.server-side.js"); // stisla js
-
-
-  __webpack_require__(/*! ./vendor/stisla/scripts */ "./resources/js/vendor/stisla/scripts.js");
-
-  __webpack_require__(/*! ./vendor/stisla/stisla */ "./resources/js/vendor/stisla/stisla.js");
+  __webpack_require__(/*! ./vendor/datatables/buttons.server-side */ "./resources/js/vendor/datatables/buttons.server-side.js");
 } catch (e) {}
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

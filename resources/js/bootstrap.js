@@ -12,17 +12,19 @@ try {
     
     require('bootstrap');
 
-    // Load Plugin
+    // Basic Plugin
     require('jquery.nicescroll');
     require('jquery-validation');
+
+    // stisla js
+    require('./vendor/stisla/stisla');
+    require('./vendor/stisla/scripts');
+
+    // Plugin
     require('moment');
     require('datatables.net-bs4');
     require('datatables.net-buttons-bs4');
     require('./vendor/datatables/buttons.server-side');
-
-    // stisla js
-    require('./vendor/stisla/scripts');
-    require('./vendor/stisla/stisla');
 } catch (e) {}
 
 /**
