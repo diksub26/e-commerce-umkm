@@ -16,10 +16,13 @@ try {
     require('jquery.nicescroll');
     require('jquery-validation');
     require('moment');
+    require('datatables.net-bs4');
+    require('datatables.net-buttons-bs4');
+    require('./vendor/datatables/buttons.server-side');
 
     // stisla js
-    require('./scripts');
-    require('./stisla');
+    require('./vendor/stisla/scripts');
+    require('./vendor/stisla/stisla');
 } catch (e) {}
 
 /**
