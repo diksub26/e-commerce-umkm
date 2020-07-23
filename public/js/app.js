@@ -81616,6 +81616,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 (function ($, DataTable) {
   "use strict";
 
+  DataTable.Buttons.defaults.dom.button.className = "btn";
+
   var _buildParams = function _buildParams(dt, action, onlyVisibles) {
     var params = dt.ajax.params();
     params.action = action;
@@ -81711,7 +81713,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
   DataTable.ext.buttons.excel = {
     className: 'buttons-excel',
     text: function text(dt) {
-      return '<i class="fa fa-file-excel-o"></i> ' + dt.i18n('buttons.excel', 'Excel');
+      return '<i class="fa fa-file-excel"></i> ' + dt.i18n('buttons.excel', 'Excel');
     },
     action: function action(e, dt, button, config) {
       var url = _buildUrl(dt, 'excel');
@@ -81722,7 +81724,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
   DataTable.ext.buttons.postExcel = {
     className: 'buttons-excel',
     text: function text(dt) {
-      return '<i class="fa fa-file-excel-o"></i> ' + dt.i18n('buttons.excel', 'Excel');
+      return '<i class="fa fa-file-excel"></i> ' + dt.i18n('buttons.excel', 'Excel');
     },
     action: function action(e, dt, button, config) {
       var url = dt.ajax.url() || window.location.href;
@@ -81735,7 +81737,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
   DataTable.ext.buttons.postExcelVisibleColumns = {
     className: 'buttons-excel',
     text: function text(dt) {
-      return '<i class="fa fa-file-excel-o"></i> ' + dt.i18n('buttons.excel', 'Excel (only visible columns)');
+      return '<i class="fa fa-file-excel"></i> ' + dt.i18n('buttons.excel', 'Excel (only visible columns)');
     },
     action: function action(e, dt, button, config) {
       var url = dt.ajax.url() || window.location.href;
@@ -81756,7 +81758,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
   DataTable.ext.buttons.csv = {
     className: 'buttons-csv',
     text: function text(dt) {
-      return '<i class="fa fa-file-excel-o"></i> ' + dt.i18n('buttons.csv', 'CSV');
+      return '<i class="fa fa-file-excel"></i> ' + dt.i18n('buttons.csv', 'CSV');
     },
     action: function action(e, dt, button, config) {
       var url = _buildUrl(dt, 'csv');
@@ -81767,7 +81769,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
   DataTable.ext.buttons.postCsvVisibleColumns = {
     className: 'buttons-csv',
     text: function text(dt) {
-      return '<i class="fa fa-file-excel-o"></i> ' + dt.i18n('buttons.csv', 'CSV (only visible columns)');
+      return '<i class="fa fa-file-excel"></i> ' + dt.i18n('buttons.csv', 'CSV (only visible columns)');
     },
     action: function action(e, dt, button, config) {
       var url = dt.ajax.url() || window.location.href;
@@ -81780,7 +81782,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
   DataTable.ext.buttons.postCsv = {
     className: 'buttons-csv',
     text: function text(dt) {
-      return '<i class="fa fa-file-excel-o"></i> ' + dt.i18n('buttons.csv', 'CSV');
+      return '<i class="fa fa-file-excel"></i> ' + dt.i18n('buttons.csv', 'CSV');
     },
     action: function action(e, dt, button, config) {
       var url = dt.ajax.url() || window.location.href;
@@ -81793,7 +81795,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
   DataTable.ext.buttons.pdf = {
     className: 'buttons-pdf',
     text: function text(dt) {
-      return '<i class="fa fa-file-pdf-o"></i> ' + dt.i18n('buttons.pdf', 'PDF');
+      return '<i class="fa fa-file-pdf"></i> ' + dt.i18n('buttons.pdf', 'PDF');
     },
     action: function action(e, dt, button, config) {
       var url = _buildUrl(dt, 'pdf');
@@ -81804,7 +81806,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
   DataTable.ext.buttons.postPdf = {
     className: 'buttons-pdf',
     text: function text(dt) {
-      return '<i class="fa fa-file-pdf-o"></i> ' + dt.i18n('buttons.pdf', 'PDF');
+      return '<i class="fa fa-file-pdf"></i> ' + dt.i18n('buttons.pdf', 'PDF');
     },
     action: function action(e, dt, button, config) {
       var url = dt.ajax.url() || window.location.href;
@@ -81839,7 +81841,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
   DataTable.ext.buttons.reload = {
     className: 'buttons-reload',
     text: function text(dt) {
-      return '<i class="fa fa-refresh"></i> ' + dt.i18n('buttons.reload', 'Reload');
+      return '<i class="fa fa-sync"></i> ' + dt.i18n('buttons.reload', 'Reload');
     },
     action: function action(e, dt, button, config) {
       dt.draw(false);

@@ -1,5 +1,6 @@
 (function ($, DataTable) {
     "use strict";
+    DataTable.Buttons.defaults.dom.button.className = "btn";
 
     var _buildParams = function (dt, action, onlyVisibles) {
         var params = dt.ajax.params();
@@ -93,7 +94,7 @@
         className: 'buttons-excel',
 
         text: function (dt) {
-            return '<i class="fa fa-file-excel-o"></i> ' + dt.i18n('buttons.excel', 'Excel');
+            return '<i class="fa fa-file-excel"></i> ' + dt.i18n('buttons.excel', 'Excel');
         },
 
         action: function (e, dt, button, config) {
@@ -106,7 +107,7 @@
         className: 'buttons-excel',
 
         text: function (dt) {
-            return '<i class="fa fa-file-excel-o"></i> ' + dt.i18n('buttons.excel', 'Excel');
+            return '<i class="fa fa-file-excel"></i> ' + dt.i18n('buttons.excel', 'Excel');
         },
 
         action: function (e, dt, button, config) {
@@ -121,7 +122,7 @@
         className: 'buttons-excel',
 
         text: function (dt) {
-            return '<i class="fa fa-file-excel-o"></i> ' + dt.i18n('buttons.excel', 'Excel (only visible columns)');
+            return '<i class="fa fa-file-excel"></i> ' + dt.i18n('buttons.excel', 'Excel (only visible columns)');
         },
 
         action: function (e, dt, button, config) {
@@ -148,7 +149,7 @@
         className: 'buttons-csv',
 
         text: function (dt) {
-            return '<i class="fa fa-file-excel-o"></i> ' + dt.i18n('buttons.csv', 'CSV');
+            return '<i class="fa fa-file-excel"></i> ' + dt.i18n('buttons.csv', 'CSV');
         },
 
         action: function (e, dt, button, config) {
@@ -161,7 +162,7 @@
         className: 'buttons-csv',
 
         text: function (dt) {
-            return '<i class="fa fa-file-excel-o"></i> ' + dt.i18n('buttons.csv', 'CSV (only visible columns)');
+            return '<i class="fa fa-file-excel"></i> ' + dt.i18n('buttons.csv', 'CSV (only visible columns)');
         },
 
         action: function (e, dt, button, config) {
@@ -176,7 +177,7 @@
         className: 'buttons-csv',
 
         text: function (dt) {
-            return '<i class="fa fa-file-excel-o"></i> ' + dt.i18n('buttons.csv', 'CSV');
+            return '<i class="fa fa-file-excel"></i> ' + dt.i18n('buttons.csv', 'CSV');
         },
 
         action: function (e, dt, button, config) {
@@ -191,7 +192,7 @@
         className: 'buttons-pdf',
 
         text: function (dt) {
-            return '<i class="fa fa-file-pdf-o"></i> ' + dt.i18n('buttons.pdf', 'PDF');
+            return '<i class="fa fa-file-pdf"></i> ' + dt.i18n('buttons.pdf', 'PDF');
         },
 
         action: function (e, dt, button, config) {
@@ -204,7 +205,7 @@
         className: 'buttons-pdf',
 
         text: function (dt) {
-            return '<i class="fa fa-file-pdf-o"></i> ' + dt.i18n('buttons.pdf', 'PDF');
+            return '<i class="fa fa-file-pdf"></i> ' + dt.i18n('buttons.pdf', 'PDF');
         },
 
         action: function (e, dt, button, config) {
@@ -246,7 +247,7 @@
         className: 'buttons-reload',
 
         text: function (dt) {
-            return '<i class="fa fa-refresh"></i> ' + dt.i18n('buttons.reload', 'Reload');
+            return '<i class="fa fa-sync"></i> ' + dt.i18n('buttons.reload', 'Reload');
         },
 
         action: function (e, dt, button, config) {
