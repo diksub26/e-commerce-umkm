@@ -7,14 +7,7 @@
         <a href="index.html">Ru</a>
       </div>
         <ul class="sidebar-menu">
-          <li class="menu-header">Dashboard</li>
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-            <ul class="dropdown-menu">
-              <li><a class="nav-link" href="index-0.html">General Dashboard</a></li>
-              <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
-            </ul>
-          </li>
+          <li {!! (request()->is('home') || request()->is('home/*') ? 'class="active"' : '') !!} ><a class="nav-link" href="{{ route('home')}}"><i class="fas fa-home"></i><span>Home</span></a></li>
           @permission('product-manage')
             <li {!! (request()->is('product') || request()->is('product/*') ? 'class="active"' : '') !!} ><a class="nav-link" href="{{ route('product.index')}}"><i class="fas fa-box"></i><span>Data Produk</span></a></li>
           @endpermission
