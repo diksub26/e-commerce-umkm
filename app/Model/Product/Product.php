@@ -2,13 +2,15 @@
 
 namespace App\Model\Product;
 
-use App\Traits\UuidTraits;
+use App\Traits\UuidWithUserTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
-    use UuidTraits, SoftDeletes;
+    use UuidWithUserTrait, SoftDeletes;
+
+    public $incrementing = false;
 
      /**
     * The attributes that are mass assignable.

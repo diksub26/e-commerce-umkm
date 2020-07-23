@@ -1,20 +1,22 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\MasterData\Product;
 
-use App\Model\Product\CategoryProductModel;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Model\Product\CategoryProductModel;
+use App\DataTables\MasterData\Product\CategoryProductDataTables;
 
-class CategoryProductModelController extends Controller
+class CategoryProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(CategoryProductDataTables $dataTable)
     {
-        //
+        return $dataTable->render('masterdata.category-product.index');
     }
 
     /**
@@ -24,7 +26,7 @@ class CategoryProductModelController extends Controller
      */
     public function create()
     {
-        //
+        return view('masterdata.category-product.create');
     }
 
     /**

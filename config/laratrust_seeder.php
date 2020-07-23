@@ -16,10 +16,13 @@ return [
             'users' => 'c,r,u,d',
             'payments' => 'c,r,u,d',
             'profile' => 'r,u',
+            'master-data' => 'm',
+            'category-product' => 'c,u,d,m'
         ],
         'umkm' => [
             'users' => 'c,r,u,d',
             'profile' => 'r,u',
+            'master-data' => 'm',
             'product' => 'c,u,d,m'
         ],
         'user' => [
