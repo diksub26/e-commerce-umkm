@@ -16,7 +16,7 @@
             </ul>
           </li>
           @permission('product-manage')
-            <li {!! (request()->is('product') || request()->is('product/*') ? 'class="active"' : '') !!} ><a class="nav-link" href="{{ route('product')}}"><i class="fas fa-box"></i><span>Data Produk</span></a></li>
+            <li {!! (request()->is('product') || request()->is('product/*') ? 'class="active"' : '') !!} ><a class="nav-link" href="{{ route('product.index')}}"><i class="fas fa-box"></i><span>Data Produk</span></a></li>
           @endpermission
           <li class="menu-header">Starter</li>
           <li class="nav-item dropdown">

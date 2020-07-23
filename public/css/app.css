@@ -2329,7 +2329,7 @@ body {
   font-size: 14px;
   font-weight: 400;
   font-family: "Nunito", "Segoe UI", arial;
-  color: #6c757d; }
+  color: #6c757d !important; }
 
 a.bb {
   text-decoration: none;
@@ -2813,7 +2813,8 @@ pre {
     vertical-align: middle; }
   .page-error h1 {
     font-size: 10em;
-    font-weight: 700; }
+    font-weight: 700; 
+    font-family: "Segoe UI", "Nunito", arial;}
   .page-error .page-description {
     font-size: 18px;
     font-weight: 400;

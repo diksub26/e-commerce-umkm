@@ -20,4 +20,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/product', 'MasterData\Product\ProductController@index')->name('product');
+
+include('master_data/index.php');
