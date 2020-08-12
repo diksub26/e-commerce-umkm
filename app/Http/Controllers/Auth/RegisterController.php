@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -69,5 +70,62 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    protected function showRegistrationForm()
+    {
+        $activeForm = 'umkm_account';
+        return view('auth/register_stisla', compact('activeForm'));
+    }
+
+    protected function umkmAccount(Request $request)
+    {
+        $data = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+        session(['register' => array(
+            'account' => $data
+        )]);
+        
+        $activeForm = 'umkm_detail';
+        $activeWizard = [
+            'umkm_detail',
+            'umkm_picture'
+        ];
+        return view('auth/register_stisla',compact('activeForm', 'activeWizard'));
+    }
+
+    protected function umkmData(Request $request)
+    {
+        $data = $request->validate([
+            'name' => ['required', 'string', 'max:100'],
+            'description' => ['required', 'string'],
+            'address' => ['required', 'string'],
+            'address' => ['required', 'string'],
+            'province_id' => ['required', 'numeric'],
+            'city_id' => ['required', 'numeric'],
+            'district_id' => ['required', 'numeric'],
+            'village_id' => ['required', 'numeric'],
+            'postal_code' => ['required', 'string', 'max:10'],
+        ]);
+
+        session(['register' => array(
+            'umkm' => $data
+        )]);
+        
+        $activeForm = 'umkm_picture';
+        $activeWizard = [
+            'umkm_detail',
+            'umkm_picture'
+        ];
+
+        return view('auth/register_stisla',compact('activeForm', 'activeWizard'));
+    }
+
+    protected function umkmPicture(Request $request)
+    {
+       
     }
 }

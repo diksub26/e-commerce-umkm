@@ -18,6 +18,7 @@ class CreateUmkmTable extends Migration
             $table->charset = 'utf8mb4';
             $table->uuid('id')->primary();
             $table->string('name', 100)->unique();
+            $table->text('description')->nullable();
             $table->text('address')->nullable();
             $table->string('postal_code', 10)->nullable();
             $table->char('province_id', 2)->constrained('indonesia_provinces')->onUpdate('cascade')->onDelete('restrict');
@@ -25,6 +26,7 @@ class CreateUmkmTable extends Migration
             $table->char('district_id', 7)->constrained('indonesia_districts')->onUpdate('cascade')->onDelete('restrict');
             $table->char('village_id', 10)->constrained('indonesia_villages')->onUpdate('cascade')->onDelete('restrict');
             $table->string('rekening_number', 50)->nullable();
+            $table->string('umkm_pic', 60)->nullable();
             $table->timestamps();
         });
     }

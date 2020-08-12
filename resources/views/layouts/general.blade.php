@@ -13,10 +13,13 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-
+    
     <!-- Scripts -->
     <script src="{{ asset('js/loader.js')}}"></script>
     
+    {{-- additional css --}}
+    @stack('css')
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -28,6 +31,6 @@
     <script src="{{ asset('js/app.js')}}"></script>
 
     {{-- for additional scripts --}}
-    @yield('script')
+    @stack('script')
 </body>
 </html>
