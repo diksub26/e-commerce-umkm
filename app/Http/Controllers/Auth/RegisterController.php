@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Model\Core\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -74,8 +74,14 @@ class RegisterController extends Controller
 
     protected function showRegistrationForm()
     {
+        return view('auth/register');
+    }
+
+    protected function showRegistrationUMKMForm()
+    {
         $activeForm = 'umkm_account';
-        return view('auth/register_stisla', compact('activeForm'));
+        $activeWizard = [];
+        return view('auth/register_stisla', compact('activeForm','activeWizard'));
     }
 
     protected function umkmAccount(Request $request)
@@ -92,7 +98,6 @@ class RegisterController extends Controller
         $activeForm = 'umkm_detail';
         $activeWizard = [
             'umkm_detail',
-            'umkm_picture'
         ];
         return view('auth/register_stisla',compact('activeForm', 'activeWizard'));
     }
@@ -124,8 +129,8 @@ class RegisterController extends Controller
         return view('auth/register_stisla',compact('activeForm', 'activeWizard'));
     }
 
-    protected function umkmPicture(Request $request)
+    protected function saveUmkmPicture(Request $request)
     {
-       
+       dd($request);
     }
 }
