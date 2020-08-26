@@ -68,21 +68,6 @@
   </main>
 @endsection
 
-@push('script')
-    <script>
-        $(function () {
-          $(window).scroll(function(){
-            var scroll = $(window).scrollTop();
-              if (scroll > 40) {
-                $(".navbar").addClass("navbar__scroll");
-              }else{
-                $(".navbar").removeClass("navbar__scroll");
-             }
-          })
-        });
-    </script>
-@endpush
-
 @push('css')
   <link rel="stylesheet" href="{{ asset('css/landing/home.css') }}">
 @endpush

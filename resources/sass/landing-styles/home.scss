@@ -1,4 +1,5 @@
-@import "variable";
+@import "../modules/colors";
+@import "../modules/layouts";
 $base-height: 760px;
 header {
     background: url("/img/landing/background-landing-roket-umkm.png") no-repeat;

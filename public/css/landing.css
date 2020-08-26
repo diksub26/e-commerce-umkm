@@ -17067,7 +17067,6 @@ a.text-dark:focus {
 footer:not(.blockquote-footer) {
   width: 100%;
   height: 75px;
-  background-color: #206346;
   padding-top: 20px;
 }
 
@@ -17075,5 +17074,47 @@ footer:not(.blockquote-footer) {
   footer:not(.blockquote-footer) .container {
     font-size: 0.7rem !important;
   }
+}
+
+/** text-color class */
+
+.ru-text-base {
+  color: #167f2c;
+}
+
+.ru-text-secondary {
+  color: #29943f;
+}
+
+.ru-text-title {
+  color: #277938;
+}
+
+.ru-bg-primary {
+  background-color: #c1f0ce;
+}
+
+.ru-bg-secondary {
+  background-color: #479071;
+}
+
+.ru-bg-third {
+  background-color: #206346;
+}
+
+.ru-bg-default {
+  background-color: #f8fafc;
+}
+
+.ru-link-base {
+  color: #167f2c;
+}
+
+.ru-link-base:hover {
+  color: #053910;
+}
+
+label {
+  color: #3a4045;
 }
 

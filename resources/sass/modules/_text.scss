@@ -1,0 +1,34 @@
+//text class
+.ru-text-base {
+    color: $text-base;
+}
+.ru-text-secondary {
+    color: $text-secondary;
+}
+.ru-text-title {
+    color: $text-title;
+}
+
+//bg class
+.ru-bg-primary {
+    background-color: $primary;
+}
+.ru-bg-secondary {
+    background-color: $secondary;
+}
+.ru-bg-third {
+    background-color: $third;
+}
+.ru-bg-default {
+    background-color: $default;
+}
+
+.ru-link-base {
+    color: $text-base;
+    &:hover {
+        color: #053910;
+    }
+}
+label{
+    color:#3a4045
+}

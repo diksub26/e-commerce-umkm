@@ -32,6 +32,18 @@
         {{-- footer --}}
         @include('layouts/public/landing-asset/footer')
         {{-- script --}}
+        <script>
+            $(function () {
+              $(window).scroll(function(){
+                var scroll = $(window).scrollTop();
+                  if (scroll > 40) {
+                    $(".navbar").addClass("navbar__scroll");
+                  }else{
+                    $(".navbar").removeClass("navbar__scroll");
+                 }
+              })
+            });
+        </script>
         @stack('script')
     </body>
 </html>

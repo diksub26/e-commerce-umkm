@@ -1,0 +1,10 @@
+@import '../modules/colors';
+main{
+    min-height: 700px;
+    width:100%;
+    padding-top: 100px;
+}
+.card{
+    background: none !important;
+    border-color:$secondary;
+}
