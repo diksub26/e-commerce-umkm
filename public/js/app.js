@@ -82717,9 +82717,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 /***/ }),
 
-/***/ "./resources/sass/landing-styles/home.scss":
+/***/ "./resources/sass/landing-styles/auth.scss":
 /*!*************************************************!*\
-  !*** ./resources/sass/landing-styles/home.scss ***!
+  !*** ./resources/sass/landing-styles/auth.scss ***!
   \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -82728,10 +82728,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 /***/ }),
 
-/***/ "./resources/sass/landing-styles/login.scss":
-/*!**************************************************!*\
-  !*** ./resources/sass/landing-styles/login.scss ***!
-  \**************************************************/
+/***/ "./resources/sass/landing-styles/home.scss":
+/*!*************************************************!*\
+  !*** ./resources/sass/landing-styles/home.scss ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -82751,9 +82751,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 /***/ }),
 
 /***/ 0:
-/*!********************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/landing.scss ./resources/sass/landing-styles/home.scss ./resources/sass/landing-styles/login.scss ***!
-  \********************************************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/landing.scss ./resources/sass/landing-styles/home.scss ./resources/sass/landing-styles/auth.scss ***!
+  \*******************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -82761,7 +82761,7 @@ __webpack_require__(/*! D:\Draft\skripsi-project\resources\js\app.js */"./resour
 __webpack_require__(/*! D:\Draft\skripsi-project\resources\sass\app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! D:\Draft\skripsi-project\resources\sass\landing.scss */"./resources/sass/landing.scss");
 __webpack_require__(/*! D:\Draft\skripsi-project\resources\sass\landing-styles\home.scss */"./resources/sass/landing-styles/home.scss");
-module.exports = __webpack_require__(/*! D:\Draft\skripsi-project\resources\sass\landing-styles\login.scss */"./resources/sass/landing-styles/login.scss");
+module.exports = __webpack_require__(/*! D:\Draft\skripsi-project\resources\sass\landing-styles\auth.scss */"./resources/sass/landing-styles/auth.scss");
 
 
 /***/ })

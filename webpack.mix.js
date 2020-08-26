@@ -17,5 +17,5 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/landing.scss', 'public/css/')
     .sass('resources/sass/landing-styles/home.scss', 'public/css/landing')
-    .sass('resources/sass/landing-styles/login.scss', 'public/css/landing')
+    .sass('resources/sass/landing-styles/auth.scss', 'public/css/landing')
     .copyDirectory('node_modules/select2/dist', 'public/vendor/select2');

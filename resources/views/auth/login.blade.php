@@ -69,5 +69,5 @@
     </main>
 @endsection
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/landing/login.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/landing/auth.css')}}">
 @endpush
