@@ -1,5 +1,5 @@
 @extends('layouts.public.landing')
-@section('title', 'Home')
+@section('title', 'Login')
 
 @section('content')
     <main>
