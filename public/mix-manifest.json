@@ -1,5 +1,8 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/css/landing.css": "/css/landing.css",
+    "/css/landing/home.css": "/css/landing/home.css",
+    "/js/core-public.js": "/js/core-public.js",
     "/js/loader.js": "/js/loader.js"
 }

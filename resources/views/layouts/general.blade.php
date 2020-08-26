@@ -8,6 +8,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    {{-- meta --}}
+    @stack('meta')
+    
     {{-- Title --}}
     <title>@yield('title') | {{ config('app.name', 'Laravel') }}</title>
 
@@ -26,6 +29,7 @@
 </head>
 <body>
     <div id="app">
+        @include('partial.message')
         @yield('content')
     </div>
     <script src="{{ asset('js/app.js')}}"></script>

@@ -1,0 +1,42 @@
+@import 'variable';
+.navbar {
+    padding-top: 16px;
+    line-height: 45px !important;
+    padding-bottom: 0;
+    font-size: 1.1em;
+    .navbar-brand,
+    .nav-link {
+        min-width: 75px !important;
+        display: block;
+        color: $text-base;
+        margin: auto !important;
+        text-align: center;
+    }
+    .nav-link:hover {
+        color: #fff;
+        background-color: $text-base;
+    }
+    .navbar-brand:hover {
+        color: #053910;
+    }
+
+    @media screen and (max-width: $medium) {
+        .navbar-brand {
+            margin: 0 !important;
+            padding-right: 8px;
+        }
+        .navbar-toggler {
+            color: $text-base;
+        }
+    }
+}
+@media screen and (max-width: $medium) {
+    .navbar {
+        background-color: $primary;
+        padding-top: 0px !important;
+    }
+}
+.navbar__scroll{
+    background: $primary;
+    padding-top: 0
+}

@@ -21,6 +21,7 @@ Auth::routes();
 Route::group(['prefix' => 'register', 'as' => 'register.'], function () {
     Route::post('register/umkm-account', 'Auth\RegisterController@umkmAccount')->name('umkmAccount');    
     Route::post('register/umkm-data', 'Auth\RegisterController@umkmData')->name('umkmData');    
+    Route::post('register/store-logo', 'Auth\RegisterController@saveUmkmPicture')->name('saveUmkmPicture');    
 });
 
 Route::group(['middleware' => 'auth'], function () {

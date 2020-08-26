@@ -1,0 +1,87 @@
+header {
+  background: url("/img/landing/background-landing-roket-umkm.png") no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 760px;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    height: 700px;
+  }
+}
+
+.jumbotron {
+  background: none;
+  color: #29943f;
+}
+
+.jumbotron .display-3 {
+  color: #277938;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .jumbotron h3 {
+    font-size: 1.3rem;
+  }
+
+  .jumbotron .lead {
+    font-size: 1rem;
+  }
+}
+
+.jumbotron-custom {
+  padding-top: 210px;
+  padding-left: 120px;
+}
+
+@media screen and (max-width: 768px) {
+  .jumbotron-custom {
+    text-align: center;
+    padding: 225px 16px 0;
+  }
+}
+
+#define-section {
+  min-height: 460px;
+  width: 100%;
+  padding-top: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  #define-section {
+    min-height: 360px;
+    padding-top: 32px;
+  }
+
+  #define-section p {
+    font-size: 1rem;
+  }
+}
+
+#our-features {
+  min-height: 460px;
+  width: 100%;
+  padding-top: 75px;
+  background-color: #479071;
+}
+
+#our-features .card {
+  height: 230px;
+  padding: 8px;
+  color: #7d7e87;
+}
+
+@media screen and (max-width: 768px) {
+  #our-features .card {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #our-features {
+    padding-top: 32px;
+  }
+}
+
