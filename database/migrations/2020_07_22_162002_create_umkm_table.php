@@ -17,7 +17,9 @@ class CreateUmkmTable extends Migration
             $table->engine = 'InnoDB';
             $table->charset = 'utf8mb4';
             $table->uuid('id')->primary();
+            $table->uuid('user_id');
             $table->string('name', 100)->unique();
+            $table->string('no_telp', 20)->unique();
             $table->text('description')->nullable();
             $table->text('address')->nullable();
             $table->string('postal_code', 10)->nullable();

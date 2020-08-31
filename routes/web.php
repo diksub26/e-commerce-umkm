@@ -19,9 +19,13 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::group(['prefix' => 'register', 'as' => 'register.'], function () {
+    Route::get('register/umkm-account', 'Auth\RegisterController@umkmAccount')->name('formAccount');    
     Route::post('register/umkm-account', 'Auth\RegisterController@umkmAccount')->name('umkmAccount');    
+    Route::get('register/umkm-data', 'Auth\RegisterController@umkmData')->name('formUmkmDetail');    
     Route::post('register/umkm-data', 'Auth\RegisterController@umkmData')->name('umkmData');    
-    Route::post('register/store-logo', 'Auth\RegisterController@saveUmkmPicture')->name('saveUmkmPicture');    
+    Route::get('register/umkm-logo', 'Auth\RegisterController@umkmPicture')->name('formUmkmLogo');    
+    Route::post('register/umkm-logo', 'Auth\RegisterController@umkmPicture')->name('saveUmkmPicture');    
+    Route::get('register/umkm-finish', 'Auth\RegisterController@umkmFinish')->name('umkmFinish');    
 });
 
 Route::group(['middleware' => 'auth'], function () {

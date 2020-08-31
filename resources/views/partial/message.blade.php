@@ -17,7 +17,7 @@
     <span id="alert_text">
       {!! isset($msg['msg']) ? $msg['msg'] : 'An Error Occured' !!}
     </span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <button type="button" class="close" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
 </div>
@@ -29,6 +29,10 @@
     @if (\Session::has('msg'))
       alertShow();
     @endif
+
+    $('#my_alert > button').on('click', function(){
+      $("#my_alert").hide(); 
+    })
   })
 
   function alertShow(){

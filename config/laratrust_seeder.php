@@ -25,7 +25,7 @@ return [
             'master-data' => 'm',
             'product' => 'c,u,d,m'
         ],
-        'user' => [
+        'reseller' => [
             'profile' => 'r,u',
         ],
     ],

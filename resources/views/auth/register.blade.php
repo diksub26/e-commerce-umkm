@@ -68,7 +68,7 @@
               </div>
             </div>
             <div class="mt-2 mt-md-4 text-muted text-center">
-              Daftar Sebagai UMKM ?<a href="{{route('register')}}" class="ru-link-base ml-1">Daftar disini</a>
+              Daftar Sebagai UMKM ?<a href="{{route('register.formAccount')}}" class="ru-link-base ml-1">Daftar disini</a>
             </div>
           </div>
           </div>
