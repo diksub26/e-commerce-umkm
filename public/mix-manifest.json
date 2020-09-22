@@ -4,6 +4,8 @@
     "/css/landing.css": "/css/landing.css",
     "/css/landing/home.css": "/css/landing/home.css",
     "/css/landing/auth.css": "/css/landing/auth.css",
+    "/css/vendor/dt/dt.css": "/css/vendor/dt/dt.css",
     "/js/core-public.js": "/js/core-public.js",
-    "/js/loader.js": "/js/loader.js"
+    "/js/loader.js": "/js/loader.js",
+    "/js/plugins/dt/dt.js": "/js/plugins/dt/dt.js"
 }

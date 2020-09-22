@@ -12,10 +12,13 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .js('resources/js/core-public.js', 'public/js')
+mix.js('resources/js/core-public.js', 'public/js')
     .js('resources/js/loader.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/landing.scss', 'public/css/')
     .sass('resources/sass/landing-styles/home.scss', 'public/css/landing')
     .sass('resources/sass/landing-styles/auth.scss', 'public/css/landing')
     .copyDirectory('node_modules/select2/dist', 'public/vendor/select2');
+
+mix.js('resources/js/plugins/dt.js', 'public/js/plugins/dt');
+mix.sass('resources/sass/vendor/dt.scss', 'public/css/vendor/dt');

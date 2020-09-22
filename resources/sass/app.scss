@@ -1,23 +1,65 @@
-// Fonts
-// @import url('https://fonts.googleapis.com/css?family=Nunito'); imported in stisla
-
 /** font awesomes */
 $fa-font-path : "../webfonts";
 @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "~@fortawesome/fontawesome-free/scss/solid.scss";
 @import "~@fortawesome/fontawesome-free/scss/brands.scss";
 
-// Variables
-@import 'variables';
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-/** Plugin */
-// DataTables
-@import "~datatables.net-bs4/css/dataTables.bootstrap4.css";
-@import "~datatables.net-buttons-bs4/css/buttons.bootstrap4.css";
-
 /** Stisla Css */
 @import "../css/vendor/stisla/style.css";
-@import "../css/vendor/stisla/components.css";
+
+/** text-color class */
+@import 'modules/text';
+
+/** layouts variabel*/
+@import 'modules/layouts';
+.navbar-bg{
+    background-color: $secondary;
+}
+.main-sidebar{
+    .sidebar-menu{
+        li.active{
+            a{
+                color: $secondary
+            }
+        }
+    }
+}
+.section-body{
+    min-height: 720px;
+}
+.align-items-stretch{
+    .card{
+        display: flex;
+        flex-basis: 100%;
+        img{
+            height:250px;
+        }
+    }
+    .card-title{
+        text-transform: capitalize;
+    }
+}
+@media screen and(max-width: $medium){
+    .align-items-stretch{
+        .card{
+            img{
+                height:200px;
+            }
+        }
+    }
+}
+.ru-btn-secondary{
+    background-color: $secondary;
+    &:hover{
+        background-color: $third !important;
+    }
+    &:active{
+        background-color: $third !important;
+    }
+    &:visited{
+        background-color: $third !important;
+    }
+}
