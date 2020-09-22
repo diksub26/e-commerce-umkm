@@ -32,4 +32,31 @@ class Umkm extends Model
         'rekening_number',
         'umkm_pic', 
     ];
+
+    public function province()
+    {
+        return $this->hasOne('App\Model\Indonesia\Province', 'id', 'province_id');
+    }
+
+    public function city()
+    {
+        return $this->hasOne('App\Model\Indonesia\City', 'id', 'city_id');
+    }
+
+    public function district()
+    {
+        return $this->hasOne('App\Model\Indonesia\District', 'id', 'district_id');
+    }
+
+    public function village()
+    {
+        return $this->hasOne('App\Model\Indonesia\Village', 'id', 'village_id');
+    }
+
+    public function getFullAddressAttribute()
+    {
+        return ucfirst($this->address).' '. ucwords(strtolower($this->province->name)).
+            ' '. ucwords(strtolower($this->city->name)) . ' '. ucwords(strtolower($this->district->name)).
+            ' '. ucwords(strtolower($this->village->name)).' Kode Pos '. $this->postal_code;
+    }
 }
