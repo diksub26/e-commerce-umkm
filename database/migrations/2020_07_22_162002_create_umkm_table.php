@@ -28,7 +28,7 @@ class CreateUmkmTable extends Migration
             $table->char('district_id', 7)->constrained('indonesia_districts')->onUpdate('cascade')->onDelete('restrict');
             $table->char('village_id', 10)->constrained('indonesia_villages')->onUpdate('cascade')->onDelete('restrict');
             $table->string('rekening_number', 50)->nullable();
-            $table->string('umkm_pic', 60)->nullable();
+            $table->string('umkm_pic', 150)->nullable();
             $table->timestamps();
         });
     }
