@@ -1,12 +1,15 @@
 <?php
 namespace App\Seeds;
 
-use Illuminate\Support\Facades\Schema;
+use App\Model\Core\Umkm;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Schema;
 
+use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
+use Ramsey\Uuid\Uuid as Generator;
 class LaratrustSeeder extends Seeder
 {
     /**
@@ -62,6 +65,23 @@ class LaratrustSeeder extends Seeder
                     'password' => bcrypt('password')
                 ]);
                 $user->attachRole($role);
+                if($key == 'umkm'){
+                    $umkm = Umkm::create([
+                        'id' => Generator::uuid4()->toString(),
+                        'user_id' => $user->id,
+                        'name' => 'UMKM Seahtera',
+                        'no_telp' => '08912312313',
+                        'description' => 'Ini adalah UMKM Sejahtera',
+                        'address' => 'Jl. Test',
+                        'postal_code' => '4012',
+                        'province_id' => '32',
+                        'city_id' => '3273',
+                        'district_id' => '3273180',
+                        'village_id' => '3273180003',
+                        'created_at' => \Carbon\Carbon::now(),
+                        'updated_at' => \Carbon\Carbon::now(),
+                    ]);
+                }
             }
 
         }

@@ -22,8 +22,10 @@ return [
         'umkm' => [
             'users' => 'c,r,u,d',
             'profile' => 'r,u',
+            'payments' => 'c,r,u,d',
             'master-data' => 'm',
-            'product' => 'c,u,d,m'
+            'product' => 'c,u,d,m',
+            'category-product' => 'c,u,d,m'
         ],
         'reseller' => [
             'profile' => 'r,u',
