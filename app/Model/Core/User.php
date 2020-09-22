@@ -42,4 +42,9 @@ class User extends Authenticatable
     ];
 
     public $incrementing = false;
+
+    public function umkm()
+    {
+        return $this->hasOne('App\Model\Core\Umkm', 'user_id', 'id');
+    }
 }

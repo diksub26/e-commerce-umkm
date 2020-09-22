@@ -27,6 +27,7 @@
 </head>
 <body>
     <div id="app">
+        @include('partial.message')
         <div class="main-wrapper">
             {{-- Navbar --}}
             @include('layouts.admin-asset.navbar')

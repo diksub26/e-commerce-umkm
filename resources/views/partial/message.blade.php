@@ -14,7 +14,7 @@
     }
 @endphp
 <div class="alert alert-{{ isset($msg['type']) ? $msg['type'] : 'danger' }} alert-dismissible fade show" role="alert" id="my_alert">
-    <span id="alert_text">
+    <span id="alert_text" class="text-light">
       {!! isset($msg['msg']) ? $msg['msg'] : 'An Error Occured' !!}
     </span>
     <button type="button" class="close" aria-label="Close">

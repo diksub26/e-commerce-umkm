@@ -17,6 +17,7 @@ class CreateCategoryProductsTable extends Migration
             $table->engine = 'InnoDB';
             $table->charset = 'utf8mb4';
             $table->increments('id');
+            $table->uuid('umkm_id');
             $table->string('name', 100)->unique();
             $table->integer('parent_id')->unsigned()->nullable();
             $table->boolean('is_parent')->default(true);
