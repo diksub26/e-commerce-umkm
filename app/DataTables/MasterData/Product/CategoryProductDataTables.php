@@ -20,7 +20,15 @@ class CategoryProductDataTables extends DataTable
     public function dataTable($query)
     {
         return datatables()
-            ->eloquent($query);
+            ->eloquent($query)
+            ->addIndexColumn()
+            ->addColumn('parent', function($data){
+                return isset($data->parent->name) ? $data->parent->name : '-';
+            })
+            ->addColumn('action', function($data){
+                return $data->edit_button . $data->deleteButton;
+            })
+            ->rawColumns(['action']);
     }
 
     /**
@@ -52,7 +60,10 @@ class CategoryProductDataTables extends DataTable
                         <"#dt_filter.col text-sm-right"f> 
                     >rt
                     <"bottom"ip><"clear">')
-                    ->orderBy(1)
+                    ->orderBy(1, 'asc')
+                    ->parameters([
+                        'lengthMenu' => [[25, 50, 100, -1], [25, 50, 100, "All"]]
+                    ])
                     ->buttons(
                         Button::make('create')
                         ->addClass('btn-success'),
@@ -73,14 +84,20 @@ class CategoryProductDataTables extends DataTable
     protected function getColumns()
     {
         return [
-            // Column::computed('action')
-            //       ->exportable(false)
-            //       ->printable(false)
-            //       ->width(60)
-            //       ->addClass('text-center'),
-            Column::make('name'),
-            Column::make('parent_id'),
-            Column::make('created_at')
+            Column::make('DT_RowIndex')
+            ->title('No.')
+            ->searchable(false)
+            ->orderable(false),
+            Column::make('name')
+                ->title('Nama'),
+            Column::make('parent')
+                ->title('Parent Kategori')
+                ->searchable(false),
+            Column::computed('action')
+                  ->exportable(false)
+                  ->printable(false)
+                  ->width(100)
+                  ->addClass('text-center'),
         ];
     }
 
