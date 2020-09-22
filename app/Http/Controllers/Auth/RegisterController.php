@@ -162,7 +162,7 @@ class RegisterController extends Controller
 
                 $user->attachRole('umkm');
                 $data = $request->session()->get('register.umkm');
-                $logo = $request->file('logo-umkm')->store('logo-umkm');
+                $logo = $request->file('logo-umkm')->store('public/logo-umkm');
                 $data['user_id'] = $user->id;
                 $data['umkm_pic'] = $logo;
                 $umkm =  UMKM::create($data);
