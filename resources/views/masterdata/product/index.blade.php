@@ -16,6 +16,11 @@
     </div>
 @endsection
 
-@section('script')
+@push('styles')
+    <link href="{{ asset('css/vendor/dt/dt.css') }}" rel="stylesheet">
+@endpush
+
+@push('script')
+    <script src="{{ asset('js/plugins/dt/dt.js')}}"></script>
     {!! $dataTable->scripts() !!}
-@endsection
+@endpush
