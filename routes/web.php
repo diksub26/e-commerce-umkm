@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('guest');
 
 Auth::routes();
 Route::group(['prefix' => 'register', 'as' => 'register.'], function () {
@@ -30,6 +30,7 @@ Route::group(['prefix' => 'register', 'as' => 'register.'], function () {
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home/{umkm}/umkm-detail', 'HomeController@showUmkm')->name('showUmkm');
     include('master_data/index.php');
 });
 
