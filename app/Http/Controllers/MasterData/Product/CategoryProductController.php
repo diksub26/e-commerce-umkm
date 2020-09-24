@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\MasterData\Product;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Model\Product\CategoryProduct;
 use App\DataTables\MasterData\Product\CategoryProductDataTables;
@@ -59,7 +58,6 @@ class CategoryProductController extends Controller
         };
 
         try {
-            DB::beginTransaction();
             $parentId = $request->parent_id;
             if($request->is_parent == true){
                 $parentId = null;
@@ -70,7 +68,6 @@ class CategoryProductController extends Controller
                 'is_parent' => ($request->is_parent ? $request->is_parent : false),
                 'parent_id' => $parentId,
             ]);
-            DB::commit();
 
             return redirect()->route('masterdata.categoryProduct.index')
                             ->with('msg', array(
@@ -130,7 +127,6 @@ class CategoryProductController extends Controller
         };
 
         try {
-            DB::beginTransaction();
             $category = CategoryProduct::find($request->id);
 
             if(!$category){
@@ -150,7 +146,6 @@ class CategoryProductController extends Controller
             }
 
             $category->save();
-            DB::commit();
 
             return redirect()->route('masterdata.categoryProduct.index')
                             ->with('msg', array(

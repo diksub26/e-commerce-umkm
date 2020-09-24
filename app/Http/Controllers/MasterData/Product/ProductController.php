@@ -4,7 +4,6 @@ namespace App\Http\Controllers\MasterData\Product;
 
 use Illuminate\Http\Request;
 use App\Model\Product\Product;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Model\Product\CategoryProduct;
 use App\DataTables\MasterData\Product\ProductDataTables;
@@ -58,8 +57,6 @@ class ProductController extends Controller
         };
 
         try {
-            DB::beginTransaction();
-            
             $category = Product::create([
                 'umkm_id' => auth()->user()->umkm->id,
                 'name' => $request->name,
@@ -70,8 +67,6 @@ class ProductController extends Controller
                 'unit_weight' => $request->unit_weight,
                 'weight' => $request->weight,
             ]);
-            DB::commit();
-
             return redirect()->route('masterdata.product.index')
                             ->with('msg', array(
                                 "type" => "success",
