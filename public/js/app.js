@@ -23479,6 +23479,37 @@ try {
   __webpack_require__(/*! ./vendor/stisla/scripts */ "./resources/js/vendor/stisla/scripts.js");
 } catch (e) {}
 
+window.beFormValidation = function (id, rules) {
+  var initValidationBootstrap = function initValidationBootstrap() {
+    jQuery('#' + id).validate({
+      ignore: [],
+      errorClass: 'invalid-feedback animated fadeInDown',
+      errorElement: 'div',
+      errorPlacement: function errorPlacement(error, e) {
+        jQuery(e).parents('.form-group').append(error);
+      },
+      highlight: function highlight(e) {
+        jQuery(e).closest('.form-control').removeClass('is-invalid').addClass('is-invalid');
+      },
+      success: function success(e) {
+        jQuery(e).closest('.form-control').removeClass('is-invalid');
+        jQuery(e).remove();
+      },
+      rules: rules,
+      submitHandler: function submitHandler(form) {
+        return true;
+      }
+    });
+  };
+
+  return {
+    init: function init() {
+      // Init Bootstrap Forms Validation
+      initValidationBootstrap();
+    }
+  };
+};
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

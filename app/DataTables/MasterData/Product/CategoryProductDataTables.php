@@ -39,7 +39,8 @@ class CategoryProductDataTables extends DataTable
      */
     public function query(CategoryProduct $model)
     {
-        return $model->newQuery();
+        return $model->where('umkm_id', auth()->user()->umkm->id)
+            ->newQuery();
     }
 
     /**

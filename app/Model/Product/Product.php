@@ -2,13 +2,14 @@
 
 namespace App\Model\Product;
 
+use App\Traits\ActionButtonTrait;
 use App\Traits\UuidWithUserTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
-    use UuidWithUserTrait, SoftDeletes;
+    use UuidWithUserTrait, SoftDeletes, ActionButtonTrait;
 
     public $incrementing = false;
 
@@ -43,4 +44,14 @@ class Product extends Model
         'updated_by',
         'deleted_at'
     ];
+
+    protected $routeEdit = [
+        'name' => 'masterdata.product.edit',
+        'paramName' => 'product'
+    ];
+
+    public function category()
+    {
+        return $this->hasOne('App\Model\Product\CategoryProduct', 'id', 'category_id');
+    }
 }

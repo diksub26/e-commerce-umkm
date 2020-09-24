@@ -24,12 +24,12 @@ class CreateProductsTable extends Migration
             $table->text('description')->nullable()->default(null); 
             $table->string('size', 50)->nullable()->default('-');
             $table->string('weight', 50)->nullable()->default(null);  
-            $table->char('unit_weight', 4)->default('gr');
+            $table->char('unit_weight', 4)->default(config('my_config.satuan_berat.code.gram'));
             $table->string('pic_1', 40)->nullable()->default(null);
             $table->string('pic_2', 40)->nullable()->default(null);
             $table->string('pic_3', 40)->nullable()->default(null);
             $table->boolean('is_discount')->nullable()->default(false);
-            $table->char('discount', 4)->default(null);
+            $table->char('discount', 4)->nullable()->default(null);
             $table->uuid('updated_by')->nullable()->default(null);
             $table->uuid('created_by')->nullable()->default(null);
             $table->softDeletes();

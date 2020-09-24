@@ -20,8 +20,18 @@ class ProductDataTables extends DataTable
     public function dataTable($query)
     {
         return datatables()
-            ->eloquent($query);
-            // ->addColumn('action', 'masterdata/product/productdatatables.action');
+            ->eloquent($query)
+            ->addIndexColumn()
+            ->editColumn('price', function($data){
+                return rupiah($data->price);
+            })
+            ->editColumn('category_id', function($data){
+                return isset($data->category->name) ? $data->category->name : '-';
+            })
+            ->addColumn('action', function($data){
+                return $data->edit_button . $data->deleteButton;
+            })
+            ->rawColumns(['action']);
     }
 
     /**
@@ -32,7 +42,9 @@ class ProductDataTables extends DataTable
      */
     public function query(Product $model)
     {
-        return $model->newQuery();
+        return $model->select('id','name','category_id', 'price' ,'size')
+            ->where('umkm_id', auth()->user()->umkm->id)
+            ->newQuery();
     }
 
     /**
@@ -53,7 +65,7 @@ class ProductDataTables extends DataTable
                         <"#dt_filter.col text-sm-right"f> 
                     >rt
                     <"bottom"ip><"clear">')
-                    ->orderBy(1)
+                    ->orderBy(1, 'asc')
                     ->buttons(
                         Button::make('create')
                         ->addClass('btn-success'),
@@ -74,15 +86,23 @@ class ProductDataTables extends DataTable
     protected function getColumns()
     {
         return [
-            // Column::computed('action')
-            //       ->exportable(false)
-            //       ->printable(false)
-            //       ->width(60)
-            //       ->addClass('text-center'),
-            Column::make('name'),
-            Column::make('category_id'),
-            Column::make('price'),
-            Column::make('weight'),
+            Column::make('DT_RowIndex')
+                ->title('No.')
+                ->searchable(false)
+                ->orderable(false),
+            Column::make('name')
+                ->title('Nama'),
+            Column::make('category_id')
+                ->title('Kategori'),
+            Column::make('size')
+                ->title('Ukuran'),
+            Column::make('price')
+                ->title('Harga'),
+            Column::computed('action')
+                ->exportable(false)
+                ->printable(false)
+                ->width(100)
+                ->addClass('text-center'),
         ];
     }
 

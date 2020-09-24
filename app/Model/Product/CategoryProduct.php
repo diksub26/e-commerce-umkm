@@ -44,5 +44,27 @@ class CategoryProduct extends Model
     {
         return $this->hasOne('App\Model\Product\CategoryProduct', 'id', 'parent_id');
     }
+
+    public function child()
+    {
+        return $this->hasMany('App\Model\Product\CategoryProduct', 'parent_id', 'id');
+    }
+
+    public static function listSelectHtml()
+    {
+        $data = self::select('id', 'name')->where('is_parent', true)->get();
+        $list = '';
+        foreach ($data as $parent) {
+            if(!$parent->child->isEmpty()){
+                $list .= '<optgroup label="'. $parent->name.'">';
+                foreach ($parent->child as $child) {
+                    $list .= '<option value="'.$child->id.'">'.$child->name.'</option>';
+                }
+                $list .= '</optgroup>';
+            }
+        }
+
+        return $list;
+    }
    
 }

@@ -60,11 +60,15 @@ class CategoryProductController extends Controller
 
         try {
             DB::beginTransaction();
+            $parentId = $request->parent_id;
+            if($request->is_parent == true){
+                $parentId = null;
+            }
             $category = CategoryProduct::create([
                 'umkm_id' => auth()->user()->umkm->id,
                 'name' => $request->name,
                 'is_parent' => ($request->is_parent ? $request->is_parent : false),
-                'parent_id' => ($request->parent_id ? $request->parent_id : null),
+                'parent_id' => $parentId,
             ]);
             DB::commit();
 
