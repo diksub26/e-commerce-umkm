@@ -56,7 +56,7 @@
                     <div class="card-footer">
                         <div class="row">
                             <div class="col-12">
-                                <button class="btn btn-danger mb-2"><i class="fa fa-ban mr-1"></i>Batal</button>
+                                <a href="{{ route('masterdata.categoryProduct.index') }}" class="btn btn-danger mb-2"><i class="fa fa-ban mr-1"></i>Batal</a>
                                 <button type="submit" class="btn btn-success mb-2 float-right"><i class="fa fa-save mr-1"></i>Simpan</button>
                             </div>
                         </div>
