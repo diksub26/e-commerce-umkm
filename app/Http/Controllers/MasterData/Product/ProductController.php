@@ -183,7 +183,7 @@ class ProductController extends Controller
             if($data->umkm_id != auth()->user()->umkm->id){
                 return response()->json([
                     'status' => 'Error',
-                    'message' => 'Anda Tidak memilik akses untuk menghapus data ini, Kontak Administrator.'
+                    'message' => 'Anda Tidak memiliki akses untuk menghapus data ini, Kontak Administrator.'
                 ], 500);
             }
             
@@ -195,7 +195,7 @@ class ProductController extends Controller
         } catch (\Throwable $th) {
             $resp = [
                 'status' => 'Error',
-                'message' => 'Anda Tidak memilik akses untuk menghapus data ini, Kontak Administrator.'
+                'message' => 'Anda Tidak memiliki akses untuk menghapus data ini, Kontak Administrator.'
             ];
             
             if(env("APP_DEBUG") == true){
