@@ -9,6 +9,10 @@ try {
     require('jquery.nicescroll');
     require('jquery-validation');
 
+    require('datatables.net-bs4');
+    require('datatables.net-buttons-bs4');
+    require('./vendor/datatables/buttons.server-side');
+
     // stisla js
     require('./vendor/stisla/stisla');
     require('./vendor/stisla/scripts');

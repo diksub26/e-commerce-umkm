@@ -1,4 +1,4 @@
-@extends('layouts.public.main')
+@extends('layouts.admin')
 @section('content-header', 'Produk UMKM')
 @section('title', 'Produk UMKM')
 
