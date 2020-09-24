@@ -24,11 +24,23 @@ Route::group(['prefix' => 'product',
 
 Route::group(['prefix' => 'category-product',
     'as' => 'categoryProduct.',
+    'middleware' => ['permission:category-product-manage']
 ], function () {
-    Route::get('/', 'MasterData\Product\CategoryProductController@index')->name('index')->middleware('permission:category-product-manage');
-    Route::get('/create', 'MasterData\Product\CategoryProductController@create')->name('create');
-    Route::post('/store', 'MasterData\Product\CategoryProductController@store')->name('store');
-    Route::get('{category}/edit', 'MasterData\Product\CategoryProductController@edit')->name('edit');
-    Route::patch('/store', 'MasterData\Product\CategoryProductController@update')->name('update');
-    Route::delete('/destroy', 'MasterData\Product\CategoryProductController@destroy')->name('destroy');
+    Route::get('/', 'MasterData\Product\CategoryProductController@index')
+        ->name('index');
+    Route::get('/create', 'MasterData\Product\CategoryProductController@create')
+        ->name('create')
+        ->middleware('permission:category-product-create');
+    Route::post('/store', 'MasterData\Product\CategoryProductController@store')
+        ->name('store')
+        ->middleware('permission:category-product-create');
+    Route::get('{category}/edit', 'MasterData\Product\CategoryProductController@edit')
+        ->name('edit')
+        ->middleware('permission:category-product-update');
+    Route::patch('/store', 'MasterData\Product\CategoryProductController@update')
+        ->name('update')
+        ->middleware('permission:category-product-update');
+    Route::delete('/destroy', 'MasterData\Product\CategoryProductController@destroy')
+        ->name('destroy')
+        ->middleware('permission:category-product-delete');
 });
