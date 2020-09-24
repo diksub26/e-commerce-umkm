@@ -4,7 +4,7 @@
         <a href="index.html">{{ config('app.name', 'Laravel') }}</a>
       </div>
       <div class="sidebar-brand sidebar-brand-sm">
-        <a href="index.html">Ru</a>
+        <a href="index.html">RU</a>
       </div>
         <ul class="sidebar-menu">
           <li {!! (request()->is('home') || request()->is('home/*') ? 'class="active"' : '') !!} ><a class="nav-link" href="{{ route('home')}}"><i class="fas fa-home"></i><span>Home</span></a></li>
@@ -19,6 +19,9 @@
               @endpermission
               @permission('product-manage')
                 <li {!! (request()->is('master-data/product') || request()->is('master-data/product/*') ? 'class="active"' : '') !!} ><a class="nav-link" href="{{ route('masterdata.product.index')}}">Data Produk</a></li>
+              @endpermission
+              @permission('master-pengiriman-manage')
+                <li {!! (request()->is('master-data/shipping') || request()->is('master-data/shipping/*') ? 'class="active"' : '') !!} ><a class="nav-link" href="{{ route('masterdata.shipping.index')}}">Master Pengiriman</a></li>
               @endpermission
             </ul>
           </li>

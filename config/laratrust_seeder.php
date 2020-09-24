@@ -16,8 +16,6 @@ return [
             'users' => 'c,r,u,d',
             'payments' => 'c,r,u,d',
             'profile' => 'r,u',
-            'master-data' => 'm',
-            'category-product' => 'c,u,d,m'
         ],
         'umkm' => [
             'users' => 'c,r,u,d',
@@ -25,7 +23,8 @@ return [
             'payments' => 'c,r,u,d',
             'master-data' => 'm',
             'product' => 'c,u,d,m',
-            'category-product' => 'c,u,d,m'
+            'category-product' => 'c,u,d,m',
+            'master-pengiriman' => 'c,u,d,m',
         ],
         'reseller' => [
             'profile' => 'r,u',
