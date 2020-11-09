@@ -14,6 +14,6 @@ return [
     */
 
     'failed' => 'Username atau Password Salah.',
-    'throttle' => 'Terlalu banyak untuk mencoba Logi, Silahkan coba beberapa saat lagi.',
+    'throttle' => 'Terlalu banyak untuk mencoba Login, Silahkan coba beberapa saat lagi.',
 
 ];
