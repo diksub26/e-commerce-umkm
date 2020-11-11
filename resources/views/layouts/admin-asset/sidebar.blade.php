@@ -23,6 +23,9 @@
               @permission('master-pengiriman-manage')
                 <li {!! (request()->is('master-data/shipping') || request()->is('master-data/shipping/*') ? 'class="active"' : '') !!} ><a class="nav-link" href="{{ route('masterdata.shipping.index')}}">Master Pengiriman</a></li>
               @endpermission
+              @permission('master-ongkir-manage')
+                <li {!! (request()->is('master-data/ongkir') || request()->is('master-data/ongkir/*') ? 'class="active"' : '') !!} ><a class="nav-link" href="{{ route('masterdata.ongkir.index')}}">Master Ongkir</a></li>
+              @endpermission
             </ul>
           </li>
           @endpermission

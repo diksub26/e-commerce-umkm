@@ -25,6 +25,7 @@ return [
             'product' => 'c,u,d,m',
             'category-product' => 'c,u,d,m',
             'master-pengiriman' => 'c,u,d,m',
+            'master-ongkir' => 'c,u,d,m',
         ],
         'reseller' => [
             'profile' => 'r,u',

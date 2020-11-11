@@ -25,4 +25,20 @@ class Shipping extends Model
         'name' => 'masterdata.shipping.edit',
         'paramName' => 'shipping'
     ];
+    
+    public function ongkir()
+    {
+        return $this->hasMany('App\Model\Shipping\Ongkir', 'id', 'shipping_id');
+    }
+
+    public static function listSelectHtml()
+    {
+        $data = self::select('id', 'name')->get();
+        $list = '';
+        foreach ($data as $val) {
+            $list .= '<option value="'. $val->id.'">'. $val->name.'</option>';
+        }
+
+        return $list;
+    }
 }
